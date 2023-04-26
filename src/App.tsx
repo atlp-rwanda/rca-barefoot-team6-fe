@@ -1,16 +1,73 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import {
+  createBrowserRouter,
+  RouterProvider
+ } from 'react-router-dom'
+ import {QueryClientProvider} from 'react-query';
+ import {ReactQueryDevtools} from 'react-query/devtools';
+ import {queryClient} from './plugins/react-query';
+ import { Toaster } from 'react-hot-toast';
 
+ import ErrorPage from './error-page'
+ import RootLayout from './pages/root'
+import About from './pages/about';
+import Login from './pages/auth/login';
+import Register from './pages/auth/register';
+import ForgotPassword from './pages/auth/forgot';
+import NewPassword from './pages/auth/newPassword';
+import Reset from './pages/auth/reset';
 function App() {
-  const [count, setCount] = useState(0)
+  const router = createBrowserRouter([
+    {
+      path: '/',
+      element: <RootLayout/>,
+      errorElement: <ErrorPage/>,
+      children: [
+        {
+          path: 'about',
+          element: <About/>
+        },
+        {
+          path: 'contact',
+          element: <div>Contact</div>
+        },
+        {
+          path: 'services',
+          element: <div>services</div>
+        },
+        {
+          path: 'auth',
+          children: [
+            {
+              path: 'login',
+              element: <Login/>
+            },
+            {
+              path: 'register',
+              element: <Register/>
+            },
+            {
+              path: 'forgot-password',
+              element: <Reset/>
+            },
+            {
+              path:'reset',
+              element:<NewPassword/>
+            }
+
+          ]
+        }
+      ]
+    }
+  ]);
 
   return (
-    <div className="flex items-center justify-center h-screen gap-4">
-        <img src={reactLogo} className="animate-spin" alt="logo"  />
-        <img src={viteLogo} alt="Vite-logo" className='animate-ping'/>
-      <h1 className='text-blue-500'>Welcome to our app</h1>
-    </div>
+    <>
+    <Toaster/>
+    <QueryClientProvider client={queryClient}>
+      <RouterProvider router={router}/> 
+      <ReactQueryDevtools initialIsOpen={false}/>
+    </QueryClientProvider>
+    </>
   )
 }
 
