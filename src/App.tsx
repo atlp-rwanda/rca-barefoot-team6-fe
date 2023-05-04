@@ -14,6 +14,7 @@ import Login from './pages/auth/login';
 import Register from './pages/auth/register';
 import ForgotPassword from './pages/auth/forgot';
 import Dashboard from './pages/dashboard';
+import Map from './pages/map/map';
 
 function App() {
   const router = createBrowserRouter([
@@ -30,6 +31,10 @@ function App() {
         {
           path: 'home',
           element: <RootLayout/>
+        },
+        {
+          path: 'map',
+          element: <Map/>
         },
         {
           path: 'about',

@@ -1,1 +1,1 @@
-export const backendUrl = 'http://localhost:3000/api'// Replace with your actual backend URL
+export const backendUrl = 'http://localhost:5001/api'// Replace with your actual backend URL
