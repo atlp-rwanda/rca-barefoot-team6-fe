@@ -2,19 +2,23 @@ import {
   createBrowserRouter,
   RouterProvider
 } from 'react-router-dom'
+
  import {QueryClientProvider} from 'react-query';
  import {ReactQueryDevtools} from 'react-query/devtools';
  import {queryClient} from './plugins/react-query';
  import { Toaster } from 'react-hot-toast';
 
- import ErrorPage from './error-page'
- import RootLayout from './pages/root'
+
+import ErrorPage from './error-page'
+import RootLayout from './pages/root'
 import About from './pages/about';
 import Login from './pages/auth/login';
 import Register from './pages/auth/register';
 import ForgotPassword from './pages/auth/forgot';
 import Dashboard from './pages/dashboard';
+
 import Map from './pages/map/map';
+
 
 function App() {
   const router = createBrowserRouter([
@@ -22,15 +26,15 @@ function App() {
       children: [
         {
           path: '',
-          element: <RootLayout/>
+          element: <RootLayout />
         },
         {
           path: '',
-          errorElement: <ErrorPage/>
+          errorElement: <ErrorPage />
         },
         {
           path: 'home',
-          element: <RootLayout/>
+          element: <RootLayout />
         },
         {
           path: 'map',
@@ -38,7 +42,7 @@ function App() {
         },
         {
           path: 'about',
-          element: <About/>
+          element: <About />
         },
         {
           path: 'contact',
@@ -53,15 +57,15 @@ function App() {
           children: [
             {
               path: 'login',
-              element: <Login/>
+              element: <Login />
             },
             {
               path: 'register',
-              element: <Register/>
+              element: <Register />
             },
             {
               path: 'forgot-password',
-              element: <ForgotPassword/>
+              element: <ForgotPassword />
             }
 
           ]
@@ -70,17 +74,19 @@ function App() {
     },
     {
       path: '/dashboard',
+
       element: <Dashboard />
+
     }
   ]);
 
   return (
     <>
-    <Toaster/>
-    <QueryClientProvider client={queryClient}>
-      <RouterProvider router={router}/> 
-      <ReactQueryDevtools initialIsOpen={false}/>
-    </QueryClientProvider>
+      <Toaster />
+      <QueryClientProvider client={queryClient}>
+        <RouterProvider router={router} />
+        <ReactQueryDevtools initialIsOpen={false} />
+      </QueryClientProvider>
     </>
   )
 }

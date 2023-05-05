@@ -1,6 +1,7 @@
 import { useMutation } from 'react-query';
 import { authService } from '../services/auth.service';
 
+
 class AuthStore {
 	token: string | undefined;
 	setToken(token: string | undefined) {
@@ -8,6 +9,7 @@ class AuthStore {
 	}
 	getToken() {
 		return this.token;
+
 	}
 	login() {
 		return useMutation(authService.login);
@@ -16,9 +18,11 @@ class AuthStore {
 		return useMutation(authService.register);
 	}
 
+
 	updateUser() {
 		return useMutation(authService.updateUser);
 	}
+
 
 	createPasswordReset() {
 		return useMutation(authService.createPasswordReset);

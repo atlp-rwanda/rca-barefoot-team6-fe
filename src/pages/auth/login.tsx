@@ -2,6 +2,7 @@ import { FormEvent, useState } from "react";
 import Input from "../../components/atoms/Input";
 import { FacebookLogo, GoogleLogo, PasswordHidden, PasswordShown } from "../../components/atoms/Icon";
 import { Link, useNavigate } from "react-router-dom";
+import Cookies from 'js-cookie';
 import Button from "../../components/atoms/Button";
 import toast from "react-hot-toast";
 import { LoginInfo } from "../../types/services/auth.types";
@@ -44,9 +45,11 @@ export default function Login() {
           id: toastId
         })
 
+
         authStore.setToken(data?.data.token) // save token to local storage)
         localStorage.setItem("token", data.data.token);
         console.log("Set Token: ", data?.data.token);
+
         navigate('/dashboard');
       },
       onError: (error) => {

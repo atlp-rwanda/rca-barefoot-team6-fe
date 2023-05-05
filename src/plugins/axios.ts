@@ -19,6 +19,8 @@ const interceptAxiosRequest = (request: InternalAxiosRequestConfig) => {
 
 	if (token) {
 		const userInfo: LoginRes = JSON.parse(token);
+		console.log("Token in Cookies: ", userInfo.accessToken);
+
 		request.headers.Authorization = `Bearer ${userInfo.accessToken}`;
 	}
 

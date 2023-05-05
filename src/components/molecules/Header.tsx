@@ -4,10 +4,12 @@ import Input from '../atoms/Input';
 import { authService } from '../../services/auth.service';
 import { useQuery } from 'react-query';
 
+
 function Header() {
     const { data } = useQuery('viewProfile', async () => {
         // const token = authStore.getToken();
         const token = localStorage.getItem("token");
+
         const config = {
             headers: {
                 Authorization: `Bearer ${token}`,
@@ -31,10 +33,12 @@ function Header() {
             </div>
             <div>
                 <div className='flex justify-end'>
+
                     <p className='font-bold'>{data?.firstName + ' ' + data?.lastName}</p>
                 </div>
                 <div className='flex justify-end'>
                     <p>{data?.email}</p>
+
                 </div>
             </div>
         </div>
