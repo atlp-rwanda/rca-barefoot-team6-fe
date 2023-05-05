@@ -4,6 +4,7 @@ import Header from '../../components/molecules/Header'
 import Sidebar from '../../components/molecules/Sidebar'
 import "./style.css"
 import "leaflet/dist/leaflet.css"
+import hotels from "./hotels.json"
 // import L from "leaflet"
 
 export default function Map() {   
@@ -24,12 +25,15 @@ export default function Map() {
         <TileLayer
          url="https://api.maptiler.com/maps/outdoor-v2/256/{z}/{x}/{y}.png?key=P9a2DSc1jdhsZIwOEyNe" attribution={"\u003ca href=\"https://www.maptiler.com/copyright/\" target=\"_blank\"\u003e\u0026copy; MapTiler\u003c/a\u003e \u003ca href=\"https://www.openstreetmap.org/copyright\" target=\"_blank\"\u003e\u0026copy; OpenStreetMap contributors\u003c/a\u003e"}
            />
+         
+            {hotels.map( (hotel , idx) => 
+               <Marker position={[hotel.lat, hotel.lng]} >
+               <Popup>
+                <b>{hotel.hotel}, {hotel.sector}</b>
+               </Popup>
+              </Marker>
+            )}
 
-          <Marker position={center} >
-            <Popup>
-             <b>Kigali Internation Airport</b>
-            </Popup>
-           </Marker>
           </MapContainer>
           
           </div> 

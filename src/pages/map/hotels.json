@@ -1,0 +1,92 @@
+[
+    {
+        "hotel": "Kigali Serena Hotel",
+        "email": "reservations@thegrandhotel.com",
+        "lat": -1.9501,  
+        "lng": 30.0588,        
+        "district": "Kicukiro"        
+         
+    },
+    {
+        "hotel": "Hilton hotel",
+        "email": "reservations@thegrandhotel.com",
+        "lat":  0.3236,  
+        "lng": 32.6,        
+        "sector": "Durban"        
+         
+    },
+    {
+        "hotel": "Kigali Marriot Hotel",
+        "email": "reservations@thegrandhotel.com",
+        "lat": -1.9469 ,  
+        "lng": 30.0619,        
+        "sector": "Kimihurura"        
+         
+    },
+    {
+        "hotel": "Radisson Blue Hotel",
+        "email": "reservations@thegrandhotel.com",
+        "lat": -1.95465 ,  
+        "lng": 30.092757,        
+        "sector": "Kimihurura"       
+         
+    },
+    {
+        "hotel": "Mountain Gorilla Nest Hotel",
+        "email": "reservations@thegrandhotel.com",
+        "lat":  -1.44226 ,  
+        "lng": 29.57923,        
+        "sector": "Musanze"       
+         
+    },
+    {
+        "hotel": "Ubumwe Grande Hotel",
+        "email": "reservations@thegrandhotel.com",
+        "lat":   -1.9468721 ,  
+        "lng": 30.0612059,        
+        "sector": "Ruhango"       
+         
+    },
+    {
+        "hotel": "Akagera Game Lodge",
+        "email": "reservations@thegrandhotel.com",
+        "lat":   -1.8746348433 ,  
+        "lng": 30.71498698,        
+        "sector": "Nyagatare"      
+         
+    },
+    {
+        "hotel": "Legend Hotel",
+        "email": "reservations@thegrandhotel.com",
+        "lat":   -1.932274 ,  
+        "lng": 30.072643,        
+        "sector": "Nyagatare"      
+         
+    },
+    {
+        "hotel": "Western Mountain Hotel",
+        "email": "reservations@thegrandhotel.com",
+        "lat":    -1.70028218 ,  
+        "lng": 29.263315437,        
+        "sector": "Nyamasheke"    
+         
+    },
+    {
+        "hotel": "Hotel des Mille Collines",
+        "email": "reservations@thegrandhotel.com",
+        "lat":    -1.9469 ,  
+        "lng": 30.0619,        
+        "sector": "Kiyovu"    
+         
+    },
+    
+    {
+        "hotel": "Volcano Hotel",
+        "email": "reservations@thegrandhotel.com",
+        "lat": -1.500751,  
+        "lng": 29.632117,        
+        "sector": "Musanze"        
+         
+    }
+    
+]
