@@ -1,23 +1,31 @@
 export type CreateUser = {
 	firstName: string;
 	lastName: string;
+	role?: string;
 	email: string;
-	password: string;
-};
+	password?: string;
 
-export type EditUser = {
-	firstName: string;
-	lastName: string;
-	email: string;
-	role?: string
+
 };
+export type EditUserType = {
+	firstName: string | undefined;
+	lastName: string | undefined;
+	email: string | undefined;
+}
+export type EditRoleType = {
+	id: number;
+	role: string
+}
 
 export type UserInfo = {
 	id: string;
 	status: UserStatus;
 	createdAt: string;
 	updatedAt: string;
-} & CreateUser | EditUser;
+
+	length?: number;
+} & CreateUser & EditRoleType;
+
 
 export enum UserRole {
 	SUPERADMIN = 'SUPERADMIN',

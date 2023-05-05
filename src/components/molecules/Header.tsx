@@ -4,10 +4,14 @@ import Input from '../atoms/Input';
 import { authService } from '../../services/auth.service';
 import { useQuery } from 'react-query';
 
+import cookies from '../../utils/cookies';
+import Cookies from 'js-cookie';
+
 function Header() {
     const { data } = useQuery('viewProfile', async () => {
-        // const token = authStore.getToken();
-        const token = localStorage.getItem("token");
+        const token = Cookies.get('token');
+        // const token = cookies.getCookie("token");
+
         const config = {
             headers: {
                 Authorization: `Bearer ${token}`,
@@ -17,6 +21,9 @@ function Header() {
 
         return response.data;
     });
+
+    console.log("data: ", data?.firstName);
+
 
     return (
         <div className="text-sm bg-white border-b border-gray-200 py-3 px-8 items-center grid grid-flow-col-dense">
@@ -31,10 +38,12 @@ function Header() {
             </div>
             <div>
                 <div className='flex justify-end'>
-                    <p className='font-bold'>{data?.firstName + ' ' + data?.lastName}</p>
+
+                    <p className='font-bold'>{data?.firstName && data.lastName ? `${data.firstName} ${data.lastName}` : 'Loading...'}</p>
                 </div>
                 <div className='flex justify-end'>
-                    <p>{data?.email}</p>
+                    <p className='font-bold'>{data?.email ? `${data.email}` : 'Loading...'}</p>
+
                 </div>
             </div>
         </div>
