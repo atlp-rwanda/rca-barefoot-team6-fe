@@ -1,3 +1,4 @@
+
 import { hotelService } from '../services/hotel.service';
 import { AxiosRequestConfig } from 'axios';
 
@@ -12,6 +13,7 @@ class HotelStore {
             throw new Error('Failed to get all hotels');
         }
     }
+
 
 }
 export default new HotelStore();
