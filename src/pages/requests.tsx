@@ -6,6 +6,7 @@ import { useQuery } from 'react-query';
 import Pagination from '../components/dashboard/Pagination';
 import { RequestInfo, RequestStatuses } from '../types/services/request.types';
 import Button from '../components/atoms/Button';
+import AddRequest from '../components/dashboard/AddRequest';
 
 function ManageRequests() {
     const PAGE_LIMIT = 5; // number of items per page
@@ -38,10 +39,25 @@ function ManageRequests() {
     const handlePageClick = ({ selected: selectedPage }: { selected: number }) => {
         setCurrentPage(selectedPage);
     };
+    const [showCard, setShowCard] = useState(false);
+    const handleEditClose = () => {
+        setShowCard(false);
+    };
+    const handleAddClick = () => {
+        setShowCard(true);
+    }
 
     return (
-        <div className='bg-white text-gray-700 p-10 rounded-lg text-sm'>
-            <h1>Requests</h1>
+        <div className={`${showCard ? 'bg-[#00000011]' : 'bg-white'} text-gray-700 p-8 rounded-lg text-sm`}>
+            <div className='flex justify-between'>
+                <h1>Requests</h1>
+                <Button onClick={handleAddClick} className='justify-self-center mx-32 mb-2'>New Reqest</Button>
+            </div>
+            {showCard && (
+                <AddRequest
+                    refetch={refetch}
+                    onClose={handleEditClose} />
+            )}
             {(dataLoading || dataIsRefetching) ? <div>Loading...</div> :
                 <div>
                     <div className='grid grid-cols-8 gap-4 py-3 font-bold'>

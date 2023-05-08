@@ -1,7 +1,4 @@
-import {
-  createBrowserRouter,
-  RouterProvider
-} from 'react-router-dom'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { QueryClientProvider } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
 import { queryClient } from './plugins/react-query';
@@ -17,6 +14,7 @@ import Dashboard from './pages/dashboard';
 import Requests from './components/dashboard/Requests';
 import VerifyEmail from './components/VerifyEmail';
 import HomePage from './pages/home';
+import DisplayHotels from './pages/hotels';
 
 function App() {
 
@@ -28,7 +26,12 @@ function App() {
     {
       path: 'requests',
       element: <Requests />
-    }
+    },
+    {
+      path: 'hotels',
+      element: <DisplayHotels />
+    },
+
   ]
 
   const AuthRoutes = [
@@ -104,4 +107,4 @@ function App() {
   )
 }
 
-export default App
+export default App;

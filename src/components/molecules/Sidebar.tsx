@@ -54,7 +54,7 @@ function Sidebar(props: any) {
                                     <Eye />
                                     <p className='pl-4 pt-1 truncate'>View requests</p>
                                 </Link>
-                                <Link to="/hotels" className="hover:text-blue-900 flex">
+                                <Link to="/dashboard/hotels" className="hover:text-blue-900 flex">
                                     <Map />
                                     <p className='pl-4 pt-1'>Hotels</p>
                                 </Link>
