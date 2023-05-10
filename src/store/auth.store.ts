@@ -35,7 +35,7 @@ class AuthStore {
 	}
 
 	resetPassword() {
-		return useMutation(authService.resetPassword);
+		return useMutation(authService.resetPasswordWithToken);
 	}
 }
 export default new AuthStore();

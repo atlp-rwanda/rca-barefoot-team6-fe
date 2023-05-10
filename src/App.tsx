@@ -10,6 +10,7 @@ import About from './pages/about';
 import Login from './pages/auth/login';
 import Register from './pages/auth/register';
 import ForgotPassword from './pages/auth/forgot';
+import ResetPassword from './pages/auth/reset';
 import Dashboard from './pages/dashboard';
 import Requests from './components/dashboard/Requests';
 import VerifyEmail from './components/VerifyEmail';
@@ -110,6 +111,39 @@ function App() {
           path: 'dashboard',
           children: DashBoardRoutes
           // accessed via {hostname}/dashboard/{routename}
+        },
+        {
+          path: 'services',
+          element: <div>services</div>
+        },
+        {
+          path: 'hotels',
+          element: <DisplayHotels />
+        },
+        {
+          path: 'map',
+          element: <HotelsMap />
+        },
+        {
+          path: 'reset-password',
+          element: <ResetPassword />
+        },
+        {
+          path: 'auth',
+          children: [
+            {
+              path: 'login',
+              element: <Login />
+            },
+            {
+              path: 'register',
+              element: <Register />
+            },
+            {
+              path: 'forgot-password',
+              element: <ForgotPassword />
+            }
+          ]
         }
       ],
     }

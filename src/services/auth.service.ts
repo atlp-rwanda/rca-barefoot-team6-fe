@@ -44,12 +44,23 @@ class AuthService {
 		return appAxios.post('/users/request-password-reset', {email});
 	}
 
+
+
 	public async createPasswordReset(
 		phoneNumber: string,
 	): Promise<AxiosResponse> {
 		return appAxios.post('/auth/create-password-reset', { phoneNumber });
 	}
 
+	   // reset password with token in the parameters
+   	public async resetPasswordWithToken(
+		resetPasswordInfo: ResetPasswordInfo,
+	 ): Promise<AxiosResponse> {
+		 return appAxios.post('/users/reset-password/'+resetPasswordInfo.token, {
+			pass: resetPasswordInfo.password,
+		 });
+	 }
+	 
 	public async resetPassword(info: ResetPasswordInfo): Promise<AxiosResponse> {
 		return appAxios.post('/auth/updated-password-reset', info);
 	}
